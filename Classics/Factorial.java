@@ -15,10 +15,10 @@ public class Factorial{
 	    if(n == 1){
 		    return n;
 		} else {
-     	    while(n != 1){
-			    result = n*(n-1);
-			}
-		}
-		return result;
+     	    for(result = 1; result == n; result++){
+			    result*=n;
+		    }
+	    }
+	return result;
 	}
 }
