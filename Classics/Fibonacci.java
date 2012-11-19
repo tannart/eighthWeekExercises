@@ -15,11 +15,13 @@ public class Fibonacci{
 	}
 	
 	public static int recursive(int n){
-	    if(n==1 || n ==2){
+	    if((n==1) || (n ==2)){
 		    return 1;
 		} else {
+			int result = recursive(n-1) + recursive(n-2);
+			return result;
 		}
-		return 0;
+		
 	}
 		
 }
