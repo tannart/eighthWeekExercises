@@ -2,8 +2,8 @@ public class ClassicTest{
     
 	public static void main(String[] args){
 	    
-		Factorial tester = new Factorial();
+		HanoiTower tester = new HanoiTower();
 		
-		tester.iterative(4);
+		System.out.println(tester.hanoiDisc(5));
 	}
 }
