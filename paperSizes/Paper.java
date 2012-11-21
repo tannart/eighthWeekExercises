@@ -17,7 +17,7 @@ public class Paper{
 
 			paperSize = size1 + "mm x " + size2 + "mm";
 	    	return paperSize;
-
+	    	
  		}else if(paper.length() > 2){
 
 			sizeHolder = size1*2;
@@ -30,13 +30,15 @@ public class Paper{
 
 		} else {
 
-			size = Integer.parseInt(paper.substring(1));		
+			size = Integer.parseInt(paper.substring(1));	
 
-			for(int i = size ; i < 0; i--){
+
+			for(int i = size ; i > 0; i--){
 
 				sizeHolder = size2/2;
 				size2 = size1;
 				size1 = sizeHolder;
+				System.out.println(sizeHolder);
 			}
 
 		paperSize = size1 + "mm x " + size2 + "mm";
