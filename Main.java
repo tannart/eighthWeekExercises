@@ -7,8 +7,8 @@ public class Main{
 
 		BinarySort test = new BinarySort();
 
-		List<Integer> testList = test.makeList(10);
+		List<Integer> testList = test.makeList(100);
 
-		test.sortList(56, testList, 0, 10);
+		test.sortList(900, testList, 0, 100);
 	}
 }
