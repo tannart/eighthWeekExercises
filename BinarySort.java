@@ -46,25 +46,32 @@ public class BinarySort{
 
 			middle = (high + low)/2;
 
+			System.out.println(aList.get(middle));
+
+			if(aList.get(middle) == num) {
+
+				System.out.println("Your Number Has Been Found !!");
+				return middle;
+
+			} else if(middle == high || middle == low){
+				System.out.println("Your number does not appear to be here");
+
+				return middle;
+			}
+
 			if(aList.get(middle) > num){
+
+				System.out.println("Going Lower");
 
 				return sortList(num, aList, low, high-1);
 
 			} else if(aList.get(middle) < num){
 
-				//if the key is in the top half of the list
+				System.out.println("Going Higher");
 
 				return sortList(num, aList, low+1, high);
 
-			} else if(middle == num) {
-
-				System.out.println("Your Number Has Been Found !!");
-				return middle;
-
-			} else if(middle == aList.size() || middle < 0) {
-
-					System.out.println("Your number does not appear to be in the list!");
-			}
+			} 
 		}
 		return middle;
 	}
