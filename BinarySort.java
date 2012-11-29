@@ -37,6 +37,8 @@ public class BinarySort{
 
 	public int sortList(int num, List<Integer> aList, int low, int high){
 		int middle = 0;
+		int lower = low;
+		int higher = high;
 
 		if(aList.equals(null)){
 
@@ -44,7 +46,7 @@ public class BinarySort{
 
 		} else {
 
-			middle = (high + low)/2;
+			middle = (higher + lower)/2;
 
 			System.out.println(aList.get(middle));
 
@@ -53,25 +55,29 @@ public class BinarySort{
 				System.out.println("Your Number Has Been Found !!");
 				return middle;
 
-			} else if(middle == high || middle == low){
-				System.out.println("Your number does not appear to be here");
-
-				return middle;
-			}
+			} 
 
 			if(aList.get(middle) > num){
 
+				higher = middle;
+
 				System.out.println("Going Lower");
 
-				return sortList(num, aList, low, high-1);
+				return sortList(num, aList, lower, higher);
 
 			} else if(aList.get(middle) < num){
 
 				System.out.println("Going Higher");
 
-				return sortList(num, aList, low+1, high);
+				lower = middle;
 
-			} 
+				return sortList(num, aList, lower, higher);
+
+			} else if(middle == higher || middle == lower || num == higher || num == lower){
+				System.out.println("Your number does not appear to be here");
+
+				return middle;
+			}
 		}
 		return middle;
 	}
